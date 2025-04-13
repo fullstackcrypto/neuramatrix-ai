@@ -22,26 +22,11 @@
   <main>
     <section id="services">
       <h2>Our Services</h2>
-      <div class="card">
-        <h3>Smart Doorbell Setup</h3>
-        <p>Install and connect your smart doorbell — includes full app walkthrough.</p>
-      </div>
-      <div class="card">
-        <h3>Smart Lock Installation</h3>
-        <p>Upgrade to secure smart locks with code setup and phone access.</p>
-      </div>
-      <div class="card">
-        <h3>Smart Lighting & Automation</h3>
-        <p>Control your lights with voice or schedule. Save energy and simplify living.</p>
-      </div>
-      <div class="card">
-        <h3>Indoor Camera Setup</h3>
-        <p>Install and configure indoor cameras with privacy zones and real-time alerts.</p>
-      </div>
-      <div class="card">
-        <h3>Assisted Living Tech Help</h3>
-        <p>Patient, hands-on tech support for residents, caregivers, and homes.</p>
-      </div>
+      <div class="card"><h3>Smart Doorbell Setup</h3><p>Install and connect your smart doorbell — includes full app walkthrough.</p></div>
+      <div class="card"><h3>Smart Lock Installation</h3><p>Upgrade to secure smart locks with code setup and phone access.</p></div>
+      <div class="card"><h3>Smart Lighting & Automation</h3><p>Control your lights with voice or schedule. Save energy and simplify living.</p></div>
+      <div class="card"><h3>Indoor Camera Setup</h3><p>Install and configure indoor cameras with privacy zones and real-time alerts.</p></div>
+      <div class="card"><h3>Assisted Living Tech Help</h3><p>Patient, hands-on tech support for residents, caregivers, and homes.</p></div>
     </section>
 
     <section id="about">
@@ -57,9 +42,9 @@
     <section id="contact">
       <h2>Contact</h2>
       <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <input type="text" name="name" placeholder="Your Name" required /><br />
+        <input type="email" name="email" placeholder="Your Email" required /><br />
+        <textarea name="message" placeholder="Your Message" required></textarea><br />
         <button type="submit">Send Message</button>
         <p id="form-status"></p>
       </form>
@@ -73,6 +58,8 @@
   </footer>
 
   <script>
+    const scriptURL = "https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec"; // Replace with your deployed URL
+
     document.getElementById("contact-form").addEventListener("submit", function (e) {
       e.preventDefault();
       const form = e.target;
@@ -82,24 +69,23 @@
         message: form.message.value,
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbwwiGW8nI6vXbXznl-bseOwRTbgYambXink_9YEa8b_GcsFeVoNRx13tz8gBgO4xQxC/exec", {
+      document.getElementById("form-status").innerText = "Sending...";
+
+      fetch(scriptURL, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
         },
       })
-      .then(async res => {
-        const responseText = await res.text();
-        if (!res.ok) {
-          throw new Error(`Error ${res.status}: ${responseText}`);
-        }
+      .then(res => res.json())
+      .then(response => {
         document.getElementById("form-status").innerText = "Message sent successfully!";
         form.reset();
       })
       .catch(err => {
-        document.getElementById("form-status").innerText = `Error sending message: ${err.message}`;
-        console.error("Detailed error:", err);
+        document.getElementById("form-status").innerText = "Error sending message: Failed to fetch";
+        console.error("Submission error", err);
       });
     });
   </script>
