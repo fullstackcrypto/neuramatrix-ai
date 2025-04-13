@@ -58,7 +58,7 @@
   </footer>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzXzRbgeg_ZJfMCu_YwkVnwkW2xa4FQHTccKLlQ02cBjJvXr1Ua0-1nU-DS_bkviwsJ/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyW-HLGZ3gmaQQAPmVWLdfYJq1GIB27W39pE3Zo4UQ1AHabTUwR5hwJHJFB2g4pw2M1/exec";
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -69,8 +69,7 @@
         message: form.message.value,
       };
 
-      const status = document.getElementById("form-status");
-      status.innerText = "Sending...";
+      document.getElementById("form-status").innerText = "Sending...";
 
       fetch(scriptURL, {
         method: "POST",
@@ -79,17 +78,14 @@
           "Content-Type": "application/json",
         },
       })
+      .then(res => res.json())
       .then(response => {
-        if (response.ok) {
-          status.innerText = "Message sent successfully!";
-          form.reset();
-        } else {
-          throw new Error("Network response was not ok");
-        }
+        document.getElementById("form-status").innerText = "Message sent successfully!";
+        form.reset();
       })
-      .catch(error => {
-        console.error("Submission error:", error);
-        status.innerText = "Error sending message: Failed to fetch";
+      .catch(err => {
+        document.getElementById("form-status").innerText = "Error sending message: Failed to fetch";
+        console.error("Submission error", err);
       });
     });
   </script>
