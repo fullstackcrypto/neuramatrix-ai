@@ -41,12 +41,13 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required /><br />
-        <input type="email" name="email" placeholder="Your Email" required /><br />
+      <form action="https://formsubmit.co/ReadySetSolutions@charleysllc.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br />
+        <input type="email" name="email" placeholder="Your Email" required><br />
         <textarea name="message" placeholder="Your Message" required></textarea><br />
+        <input type="hidden" name="_next" value="https://neuramatrix.ai/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
         <button type="submit">Send Message</button>
-        <p id="form-status"></p>
       </form>
       <p>Email: <a href="mailto:ReadySetSolutions@charleysllc.com">ReadySetSolutions@charleysllc.com</a></p>
       <p>Phone: <a href="tel:+14808407177">(480) 840-7177</a></p>
@@ -56,54 +57,6 @@
   <footer>
     <p>&copy; 2024 Ready-Set Solutions · Powered by NeuraMatrix.ai · A CHARLEY’S LLC Service</p>
   </footer>
-
-  <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyW-HLGZ3gmaQQAPmVWLdfYJq1GIB27W39pE3Zo4UQ1AHabTUwR5hwJHJFB2g4pw2M1/exec";
-
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-
-      if (!name || !email || !message) {
-        status.innerText = "Please complete all fields before submitting.";
-        return;
-      }
-
-      const data = { name, email, message };
-      status.innerText = "Sending...";
-      form.querySelector("button").disabled = true;
-
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000);
-
-        const response = await fetch(scriptURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-          signal: controller.signal,
-        });
-
-        clearTimeout(timeout);
-
-        if (!response.ok) throw new Error(`Server returned ${response.status}`);
-
-        status.innerText = "Message sent successfully!";
-        form.reset();
-      } catch (err) {
-        status.innerText = "Error sending message. Please try again.";
-        console.error("Submission failed:", err);
-      } finally {
-        form.querySelector("button").disabled = false;
-      }
-    });
-  </script>
 
 </body>
 </html>
