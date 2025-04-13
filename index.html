@@ -1,39 +1,109 @@
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyW-HLGZ3gmaQQAPmVWLdfYJq1GIB27W39pE3Zo4UQ1AHabTUwR5hwJHJFB2g4pw2M1/exec";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ready-Set Solutions</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+  <header>
+    <h1>Welcome to Ready-Set Solutions</h1>
+    <p>Tech Made Simple for Smarter, Safer Living</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="smart-lighting.html">Smart Lighting</a>
+      <a href="luxury-wellness.html">Luxury Wellness</a>
+    </nav>
+  </header>
 
-    if (!name || !email || !message) {
-      document.getElementById("form-status").innerText = "Please complete all fields before submitting.";
-      return;
-    }
+  <main>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="card"><h3>Smart Doorbell Setup</h3><p>Install and connect your smart doorbell — includes full app walkthrough.</p></div>
+      <div class="card"><h3>Smart Lock Installation</h3><p>Upgrade to secure smart locks with code setup and phone access.</p></div>
+      <div class="card"><h3>Smart Lighting & Automation</h3><p>Control your lights with voice or schedule. Save energy and simplify living.</p></div>
+      <div class="card"><h3>Indoor Camera Setup</h3><p>Install and configure indoor cameras with privacy zones and real-time alerts.</p></div>
+      <div class="card"><h3>Assisted Living Tech Help</h3><p>Patient, hands-on tech support for residents, caregivers, and homes.</p></div>
+    </section>
 
-    const data = { name, email, message };
-    document.getElementById("form-status").innerText = "Sending...";
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Ready-Set Solutions is a veteran-owned service focused on simple, secure home tech solutions. We specialize in both residential and assisted living setups, offering professional installations and support with care and clarity.</p>
+    </section>
 
-    fetch(scriptURL, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then(res => {
-      if (res.ok) {
-        document.getElementById("form-status").innerText = "Message sent successfully!";
-        form.reset();
-      } else {
-        throw new Error("Failed to send.");
+    <section id="book">
+      <h2>Book a Service</h2>
+      <p>Online scheduling and payment coming soon. In the meantime, call or text <strong>(480) 840-7177</strong> to book your appointment.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required /><br />
+        <input type="email" name="email" placeholder="Your Email" required /><br />
+        <textarea name="message" placeholder="Your Message" required></textarea><br />
+        <button type="submit">Send Message</button>
+        <p id="form-status"></p>
+      </form>
+      <p>Email: <a href="mailto:ReadySetSolutions@charleysllc.com">ReadySetSolutions@charleysllc.com</a></p>
+      <p>Phone: <a href="tel:+14808407177">(480) 840-7177</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Ready-Set Solutions · Powered by NeuraMatrix.ai · A CHARLEY’S LLC Service</p>
+  </footer>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyW-HLGZ3gmaQQAPmVWLdfYJq1GIB27W39pE3Zo4UQ1AHabTUwR5hwJHJFB2g4pw2M1/exec";
+
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        status.innerText = "Please complete all fields before submitting.";
+        return;
       }
-    })
-    .catch(err => {
-      document.getElementById("form-status").innerText = "Error sending message. Please try again.";
-      console.error("Submission error", err);
+
+      const data = { name, email, message };
+      status.innerText = "Sending...";
+      form.querySelector("button").disabled = true;
+
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeout);
+
+        if (!response.ok) throw new Error(`Server returned ${response.status}`);
+
+        status.innerText = "Message sent successfully!";
+        form.reset();
+      } catch (err) {
+        status.innerText = "Error sending message. Please try again.";
+        console.error("Submission failed:", err);
+      } finally {
+        form.querySelector("button").disabled = false;
+      }
     });
-  });
-</script>
+  </script>
+
+</body>
+</html>
