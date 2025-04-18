@@ -18,11 +18,11 @@
     <a href="luxury-wellness.html">Home Comfort Tech</a>
     <a href="surveillance.html">Surveillance</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 
   <main>
-    <section style="max-width: 600px; margin: auto;">
+    <section style="max-width: 600px; margin: 2rem auto; padding: 1rem;">
       <form action="https://formspree.io/f/mqkrrkzd" method="POST">
         <label for="name">Name:</label><br/>
         <input type="text" id="name" name="name" required><br/><br/>
@@ -30,14 +30,18 @@
         <label for="email">Email:</label><br/>
         <input type="email" id="email" name="email" required><br/><br/>
 
-        <label for="phone">Phone:</label><br/>
+        <label for="phone">Phone (optional):</label><br/>
         <input type="tel" id="phone" name="phone"><br/><br/>
 
-        <label for="message">Message:</label><br/>
+        <label for="message">How can we help?</label><br/>
         <textarea id="message" name="message" rows="6" required></textarea><br/><br/>
 
         <button type="submit" class="btn">Send Message</button>
       </form>
+
+      <p style="font-size: 0.9rem; color: #888; text-align: center; margin-top: 1rem;">
+        We’ll respond within 24 hours. Install requests may require a consultation first.
+      </p>
     </section>
   </main>
 
