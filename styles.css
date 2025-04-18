@@ -1,3 +1,6 @@
+/* Import readable tech-style font */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap');
+
 /* General Reset */
 body, h1, h2, p, a {
     margin: 0;
@@ -5,13 +8,15 @@ body, h1, h2, p, a {
     box-sizing: border-box;
     font-weight: 500;
     letter-spacing: 0.3px;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     background-color: #12141b;
     color: #d8e3ec;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 17px;
 }
 
 /* Header Styling */
@@ -20,15 +25,23 @@ header {
     color: #ffffff;
     text-align: center;
     padding: 2rem 0;
+    border-bottom: 2px solid #00f0ff;
 }
 
 .header-glow h1 {
     font-size: 2.5rem;
     text-shadow: 0 0 8px #00f0ff;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.85; text-shadow: 0 0 10px #00f0ff; }
+    100% { opacity: 1; text-shadow: 0 0 5px #00c0cc; }
 }
 
 header p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-top: 0.5rem;
 }
 
@@ -48,12 +61,26 @@ nav.main-nav a {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     margin: 0 0.5rem;
-    transition: background-color 0.3s ease-in-out;
+    position: relative;
+}
+
+nav.main-nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #00f0ff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+}
+
+nav.main-nav a:hover::after {
+    transform: scaleX(1);
 }
 
 nav.main-nav a:hover {
-    background-color: #00509e;
-    border-radius: 5px;
+    color: #00f0ff;
+    text-shadow: 0 0 6px #00f0ff;
 }
 
 /* Main Content */
@@ -64,39 +91,49 @@ main {
 
 section {
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #1a1d25;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.35);
 }
 
 section h2 {
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     color: #00f0ff;
+    text-shadow: 0 0 5px #00f0ff;
 }
 
 section p {
     margin-bottom: 1.5rem;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.85rem 1.6rem;
     background-color: #00f0ff;
     color: #000;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
     margin: 0.5rem;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
     background-color: #00c0cc;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
 
 .btn.btn-outline {
@@ -117,4 +154,18 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Subtle Buzz on Hover */
+a:hover, .btn:hover, nav.main-nav a:hover {
+    animation: buzz 0.15s linear 1;
+}
+
+@keyframes buzz {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-2px); }
+    50%  { transform: translateX(2px); }
+    75%  { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
 }
