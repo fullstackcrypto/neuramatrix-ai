@@ -1,80 +1,39 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | NeuraMatrix.ai</title>
+  <title>Contact – NeuraMatrix.ai</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0a0a0a;
-      color: #00ffff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }.header-glow {
-  padding: 60px 20px 20px;
-  text-shadow: 0 0 15px #00ffff99;
-  animation: fadeIn 1s ease;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.btn {
-  background-color: #00ffff;
-  color: #000;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00dddd;
-}
-
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid #00ffff;
-  color: #00ffff;
-}
-
-footer {
-  position: absolute;
-  bottom: 20px;
-  font-size: 0.85rem;
-  color: #888;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-  </style>
 </head>
 <body>
-  <header class="header-glow">
-    <h1>Thank You!</h1>
-    <p>Your message has been received. We’ll get back to you shortly.</p>
-  </header>  <main>
-    <div class="cta-buttons">
-      <a href="index.html" class="btn">Back to Home</a>
-      <a href="services.html" class="btn btn-outline">View Services</a>
-    </div>
-  </main>  <footer>
-    <p>&copy; 2024 NeuraMatrix.ai • Smart Living by CHARLEY’S LLC</p>
+  <header>
+    <h1>NeuraMatrix.ai</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="store.html">Store</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 600px; margin: 80px auto; background: #1c1c1c; padding: 40px; border-radius: 16px; box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);">
+    <h2 style="text-align: center; color: #00ffff;">Let’s Customize Your Smart Setup</h2>
+
+    <form action="https://formsubmit.co/support@charleysllc.com" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+      <input type="text" name="name" placeholder="Full Name" required style="padding: 14px; border-radius: 8px; background: #333; color: #fff; border: none;" />
+      <input type="email" name="email" placeholder="Email Address" required style="padding: 14px; border-radius: 8px; background: #333; color: #fff; border: none;" />
+      <textarea name="message" rows="5" placeholder="Tell us what upgrades you're interested in..." required style="padding: 14px; border-radius: 8px; background: #333; color: #fff; border: none;"></textarea>
+      <input type="text" name="_gotcha" style="display: none;" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="thank-you.html" />
+      <button type="submit" style="background-color: #00ffff; color: #000; padding: 14px; border: none; border-radius: 30px; font-weight: bold;">Submit Request</button>
+    </form>
+  </main>
+
+  <footer style="text-align: center; padding: 30px; background: #0a0a0a; color: #777; font-size: 0.85rem;">
+    <p>&copy; 2024 NeuraMatrix.ai • Smart Living by CHARLEY’S LLC | Chandler, AZ</p>
   </footer>
 </body>
 </html>
