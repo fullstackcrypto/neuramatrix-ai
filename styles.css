@@ -1,26 +1,124 @@
-/* styles.css for NeuraMatrix.ai */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
 
-body { margin: 0; padding: 0; font-family: 'Rajdhani', sans-serif; background-color: #000; color: #fff; }
+body {
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0b0c10;
+    color: #ffffff;
+    overflow-x: hidden;
+}
 
-h1, h2, p { margin: 0 0 20px 0; }
+.hero-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
 
-.hero { position: relative; background-image: url('assets/sundown-home.png'); /* Replace with actual image path */ background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7); transition: background 0.5s ease; }
+.hero-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(50%);
+}
 
-.zones { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
 
-.zone { background: rgba(255, 255, 255, 0.05); border: 2px solid #00ffff44; padding: 18px 22px; border-radius: 15px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+.hero-text {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
 
-.zone:hover { background: rgba(0, 255, 255, 0.1); transform: scale(1.05); box-shadow: 0 0 15px #00ffff55; }
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
 
-.zone.active { background: rgba(0, 255, 255, 0.3); box-shadow: 0 0 25px #00ffffcc; transform: scale(1.1); }
+.hero-text p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
 
-.cta { text-align: center; margin-top: 30px; }
+.hero-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: #45a29e;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
 
-.cta button { background-color: #00ffff; color: #000; border: none; border-radius: 30px; padding: 14px 32px; font-size: 1.1rem; font-weight: bold; cursor: pointer; opacity: 0; transition: opacity 0.5s ease, transform 0.3s ease; box-shadow: 0 0 10px #00ffffaa; }
+.hero-btn:hover {
+    transform: translateY(-3px);
+}
 
-.cta.show button { opacity: 1; transform: scale(1.05); }
+.interactive-zones {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
 
-#contact { background-color: #111; padding: 100px 40px; color: #fff; }
+.zone {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgba(69,162,158,0.7);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-@media (max-width: 768px) { .zones { flex-direction: column; align-items: center; } .zone { width: 80%; text-align: center; } }
+.zone:hover {
+    background-color: #66fcf1;
+}
 
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    background: #1f2833;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #c5c6c7;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #66fcf1;
+}
+
+.projects-reviews {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.cta-btn {
+    padding: 0.5rem 1rem;
+    background-color: #45a29e;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f2833;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
