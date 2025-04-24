@@ -11,9 +11,39 @@
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
-    }.hero {
+    }header {
+  background: #0a0a0a;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #00ffff33;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin: 0;
+}
+
+nav a {
+  color: #00ffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #00dddd;
+}
+
+.hero {
   position: relative;
-  background-image: url('assets/sunset-scene.png'); /* replace with actual image */
+  background-image: url('assets/sunset-scene.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -25,7 +55,7 @@
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7);
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 3rem;
   margin: 0;
   color: #00ffff;
@@ -82,7 +112,9 @@
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px 20px;
+  background: #0a0a0a;
+  border-top: 1px solid #00ffff22;
   font-size: 0.9rem;
   color: #777;
 }
@@ -90,8 +122,17 @@ footer {
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Ready-Set Smart HQ</h1>
+  <header>
+    <h1>NeuraMatrix.ai</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="store.html">Store</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>  <section class="hero">
+    <h2>Ready-Set Smart HQ</h2>
     <p>Smart home installs and property prep services</p><div class="labels">
   <div class="label-box">Smart Lighting</div>
   <div class="label-box">Smart Lock</div>
@@ -106,7 +147,7 @@ footer {
 </div>
 
   </section>  <footer>
-    <p>&copy; 2024 NeuraMatrix.ai • Powered by CHARLEY'S LLC | Chandler, AZ</p>
+    <p>&copy; 2024 NeuraMatrix.ai • Smart Living by CHARLEY'S LLC | Chandler, AZ</p>
   </footer>
 </body>
 </html>
