@@ -1,55 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuraMatrix.ai | Smart Home & Wellness Solutions</title>
-  <meta name="description" content="Smart home upgrades, installation services, and curated Honeywell products for security, lighting, and entry. Powered by CHARLEY’S LLC.">
-  <meta name="author" content="CHARLEY’S LLC">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>NeuraMatrix.ai – Smart HQ</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }.hero {
+  position: relative;
+  background-image: url('assets/sundown-home.png'); /* Replace with your actual path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+}
+
+.zones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.zone {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #00ffff44;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+.zone:hover {
+  background: rgba(0,255,255,0.1);
+  transform: scale(1.05);
+}
+.zone.active {
+  background: rgba(0,255,255,0.3);
+  box-shadow: 0 0 20px #00ffff88;
+  transform: scale(1.1);
+}
+
+.cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta button {
+  background-color: #00ffff;
+  color: #000;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cta.show button {
+  opacity: 1;
+}
+
+  </style>
 </head>
 <body>
-  <header class="header-glow">
-    <h1>NeuraMatrix.ai</h1>
-    <p>Smarter Living Powered by Technology</p>
-  </header>
-
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="smart-lighting.html">Smart Lighting</a>
-    <a href="smart-entry.html">Smart Entry</a>
-    <a href="surveillance.html">Surveillance</a>
-    <a href="services.html">Install Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <main>
-    <section class="intro">
-      <h2>Explore Smart Solutions</h2>
-      <p>Upgrade your home with fingerprint locks, smart lighting, high-tech surveillance, and more. Installed by a trusted veteran-owned company.</p>
-      <div class="cta-buttons">
-        <a href="services.html" class="btn">Request Installation</a>
-        <a href="https://www.amazon.com/stores/Honeywell/page/48BEB5A1-F35D-4F69-B8BD-62CC99A46985?tag=charleysllc-20" class="btn btn-outline" target="_blank">Visit Honeywell Store</a>
-      </div>
-    </section>
-
-    <section class="reviews">
-      <h2>Customer Reviews</h2>
-      <div class="card">
-        <p>"Excellent install work — punctual, clean, and effective. Would definitely recommend!"</p>
-        <p class="review-author">– Angie’s List Reviewer</p>
-      </div>
-      <div class="card">
-        <p>"Super helpful and knowledgeable about smart lighting — we’re loving our upgraded system!"</p>
-        <p class="review-author">– Verified Local Customer</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 NeuraMatrix.ai • Powered by CHARLEY’S LLC</p>
-  </footer>
-</body>
+  <section class="hero">
+    <div class="zones">
+      <div class="zone" onclick="toggleZone(this)">Smart Lighting</div>
+      <div class="zone" onclick="toggleZone(this)">Smart Lock</div>
+      <div class="zone" onclick="toggleZone(this)">Surveillance</div>
+      <div class="zone" onclick="toggleZone(this)">Property Prep</div>
+    </div>
+    <div class="cta" id="cta-box">
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+        Finalize My Smart Setup
+      </button>
+    </div>
+  </section>  <!-- Contact Section Placeholder -->  <section id="contact" style="padding: 100px 40px; background: #111;">
+    <h2>Request a Quote</h2>
+    <p>Let us know which features you'd like and we’ll schedule your install.</p>
+    <!-- Contact form will be added here -->
+  </section>  <script>
+    function toggleZone(el) {
+      el.classList.toggle('active');
+      const activeZones = document.querySelectorAll('.zone.active').length;
+      const cta = document.getElementById('cta-box');
+      if (activeZones > 0) {
+        cta.classList.add('show');
+      } else {
+        cta.classList.remove('show');
+      }
+    }
+  </script></body>
 </html>
