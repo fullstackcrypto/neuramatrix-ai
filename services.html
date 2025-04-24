@@ -1,59 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install Services | NeuraMatrix.ai</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Services | NeuraMatrix.ai</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      padding: 40px 20px;
+    }h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #00ffff88;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #00ffff66;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.service-card p {
+  flex: 1;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-main {
+  background: #00ffff;
+  color: #000;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+  </style>
 </head>
 <body>
-  <header class="header-glow">
-    <h1>Install Services</h1>
-    <p>Professional, local tech installations powered by CHARLEY'S LLC</p>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="smart-lighting.html">Smart Lighting</a>
-      <a href="smart-entry.html">Smart Entry</a>
-      <a href="surveillance.html">Surveillance</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>Ready to Upgrade?</h2>
-      <p>Select your preferred Honeywell category below, then request installation with a quick consultation form.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn">Request a Quote</a>
-        <a href="https://www.amazon.com/stores/Honeywell/page/48BEB5A1-F35D-4F69-B8BD-62CC99A46985?tag=charleysllc-20" target="_blank" class="btn btn-outline">Visit Honeywell Store</a>
+  <h1>Explore Our Smart Home Services</h1>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Smart Lighting & Entry</h3>
+      <p>Enhance security and ambiance with automated lights and smart locks.</p>
+      <div class="card-buttons">
+        <a href="#" class="btn-outline">Learn More</a>
+        <a href="contact.html" class="btn-main">Request Install</a>
       </div>
-    </section>
+    </div><div class="service-card">
+  <h3>Surveillance & Security</h3>
+  <p>24/7 visual protection for peace of mind. Cameras, sensors, alerts and more.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
+</div>
 
-    <section>
-      <h2>Common Install Services</h2>
-      <ul style="max-width:600px; margin:auto; text-align:left; list-style:none; padding-left:0;">
-        <li>- Smart Lock & Entry Setup</li>
-        <li>- Smart Light & Switch Installation</li>
-        <li>- Surveillance Camera Mounting</li>
-        <li>- Doorbell Cam Configuration</li>
-        <li>- Safe Room & Access Control</li>
-        <li>- Voice Assistant Integration</li>
-      </ul>
-    </section>
+<div class="service-card">
+  <h3>Home Comfort Tech</h3>
+  <p>Automated thermostats, air quality monitors, and smart climate control systems.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
+</div>
 
-    <section>
-      <h2>Need Custom Help?</h2>
-      <p>Every home is unique. Use our contact form to explain your needs, and we’ll get back with a clear quote and timeline.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn">Get a Custom Quote</a>
-      </div>
-    </section>
-  </main>
+<div class="service-card">
+  <h3>Property Prep Services</h3>
+  <p>Curb appeal, cleanup, staging and prep for homes ready to sell or rent fast.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
+</div>
 
-  <footer>
-    <p>&copy; 2024 NeuraMatrix.ai • Install Services by CHARLEY’S LLC</p>
+  </div>  <footer>
+    <p>&copy; 2024 NeuraMatrix.ai • Smart Living by CHARLEY’S LLC</p>
   </footer>
 </body>
 </html>
