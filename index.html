@@ -1,16 +1,16 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuraMatrix.ai – Smart HQ</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Services | NeuraMatrix.ai</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      margin: 0;
-      font-family: 'Rajdhani', sans-serif;
-      background-color: #000;
+      background-color: #0b0b0b;
       color: #fff;
-      overflow-x: hidden;
+      font-family: 'Rajdhani', sans-serif;
+      padding: 0;
+      margin: 0;
     }header {
   background: #0a0a0a;
   padding: 14px 30px;
@@ -41,82 +41,83 @@ nav a:hover {
   color: #00dddd;
 }
 
-.hero {
-  position: relative;
-  background-image: url('assets/sunset-scene.png');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+h1 {
+  text-align: center;
+  margin: 60px 0 40px;
+  text-shadow: 0 0 10px #00ffff88;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.service-card {
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 40px;
-  text-align: center;
-  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7);
+  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
 
-.hero h2 {
-  font-size: 3rem;
-  margin: 0;
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #00ffff66;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
   color: #00ffff;
-  text-shadow: 0 0 20px #00ffff88;
 }
 
-.hero p {
-  margin: 10px 0 30px;
-  font-size: 1.3rem;
+.service-card p {
+  flex: 1;
+  margin-bottom: 20px;
   color: #ccc;
 }
 
-.cta-buttons {
+.card-buttons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.cta-buttons a {
-  background-color: #00ffff;
-  color: #000;
-  padding: 14px 26px;
+.card-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-.cta-buttons a:hover {
-  transform: scale(1.05);
-  background-color: #00dddd;
+.btn-main {
+  background: #00ffff;
+  color: #000;
 }
 
-.labels {
-  position: absolute;
-  bottom: 160px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.label-box {
-  background-color: rgba(0, 255, 255, 0.15);
-  border: 1px solid #00ffff66;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  box-shadow: 0 0 10px #00ffff55;
+.btn-outline {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
 }
 
 footer {
+  margin-top: 40px;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px;
   background: #0a0a0a;
   border-top: 1px solid #00ffff22;
-  font-size: 0.9rem;
-  color: #777;
+  font-size: 0.85rem;
+  color: #888;
 }
 
   </style>
@@ -131,22 +132,43 @@ footer {
       <a href="reviews.html">Reviews</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>  <section class="hero">
-    <h2>Ready-Set Smart HQ</h2>
-    <p>Smart home installs and property prep services</p><div class="labels">
-  <div class="label-box">Smart Lighting</div>
-  <div class="label-box">Smart Lock</div>
-  <div class="label-box">Entry Camera</div>
-  <div class="label-box">Property Prep</div>
+  </header>  <h1>Explore Our Smart Home Services</h1>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Smart Lighting & Entry</h3>
+      <p>Enhance security and ambiance with automated lights and smart locks.</p>
+      <div class="card-buttons">
+        <a href="#" class="btn-outline">Learn More</a>
+        <a href="contact.html" class="btn-main">Request Install</a>
+      </div>
+    </div><div class="service-card">
+  <h3>Surveillance & Security</h3>
+  <p>24/7 visual protection for peace of mind. Cameras, sensors, alerts and more.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
 </div>
 
-<div class="cta-buttons">
-  <a href="services.html">View Services</a>
-  <a href="store.html">Visit Store</a>
-  <a href="contact.html">Get a Quote</a>
+<div class="service-card">
+  <h3>Home Comfort Tech</h3>
+  <p>Automated thermostats, air quality monitors, and smart climate control systems.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
 </div>
 
-  </section>  <footer>
+<div class="service-card">
+  <h3>Property Prep Services</h3>
+  <p>Curb appeal, cleanup, staging and prep for homes ready to sell or rent fast.</p>
+  <div class="card-buttons">
+    <a href="#" class="btn-outline">Learn More</a>
+    <a href="contact.html" class="btn-main">Request Install</a>
+  </div>
+</div>
+
+  </div>  <footer>
     <p>&copy; 2024 NeuraMatrix.ai • Smart Living by CHARLEY'S LLC | Chandler, AZ</p>
   </footer>
 </body>
