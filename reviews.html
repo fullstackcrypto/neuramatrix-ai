@@ -1,91 +1,112 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Reviews | NeuraMatrix.ai</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuraMatrix.ai – Smart HQ</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      background-color: #0b0b0b;
-      color: #fff;
+      margin: 0;
       font-family: 'Rajdhani', sans-serif;
-      padding: 60px 20px;
-      text-align: center;
-    }h1 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }.hero {
+  position: relative;
+  background-image: url('assets/sunset-scene.png'); /* replace with actual image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  text-align: center;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
   color: #00ffff;
-  text-shadow: 0 0 12px #00ffff88;
+  text-shadow: 0 0 20px #00ffff88;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.review-card {
-  background: #1b1b1b;
-  border: 1px solid #00ffff44;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.08);
-  text-align: left;
-}
-
-.review-card h3 {
-  margin: 0 0 10px;
-  color: #00ffff;
-}
-
-.review-card p {
+.hero p {
+  margin: 10px 0 30px;
+  font-size: 1.3rem;
   color: #ccc;
-  font-size: 1rem;
 }
 
-.review-footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #888;
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-buttons a {
+  background-color: #00ffff;
+  color: #000;
+  padding: 14px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: 0.3s ease;
+}
+
+.cta-buttons a:hover {
+  transform: scale(1.05);
+  background-color: #00dddd;
+}
+
+.labels {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.label-box {
+  background-color: rgba(0, 255, 255, 0.15);
+  border: 1px solid #00ffff66;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px #00ffff55;
 }
 
 footer {
-  margin-top: 60px;
-  font-size: 0.85rem;
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
   color: #777;
 }
 
   </style>
 </head>
 <body>
-  <h1>What Clients Are Saying</h1>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <h3>"So Fast and Professional!"</h3>
-      <p>Charley installed our smart door lock in under an hour. I feel so much safer now, and it looks amazing too. Highly recommend!</p>
-      <div class="review-footer">– Amanda R., Chandler AZ</div>
-    </div><div class="review-card">
-  <h3>"Made My Home Smarter Instantly"</h3>
-  <p>I was overwhelmed by options online, but Ready-Set guided me from purchase to install. Everything works flawlessly.</p>
-  <div class="review-footer">– Daniel T., Mesa AZ</div>
+  <section class="hero">
+    <h1>Ready-Set Smart HQ</h1>
+    <p>Smart home installs and property prep services</p><div class="labels">
+  <div class="label-box">Smart Lighting</div>
+  <div class="label-box">Smart Lock</div>
+  <div class="label-box">Entry Camera</div>
+  <div class="label-box">Property Prep</div>
 </div>
 
-<div class="review-card">
-  <h3>"Great Work. Fair Price."</h3>
-  <p>We booked lighting, irrigation timers, and a camera system. They came out next day and handled it all. Super clean work.</p>
-  <div class="review-footer">– Jolene S., Gilbert AZ</div>
+<div class="cta-buttons">
+  <a href="services.html">View Services</a>
+  <a href="store.html">Visit Store</a>
+  <a href="contact.html">Get a Quote</a>
 </div>
 
-<div class="review-card">
-  <h3>"Looks Like a New Property"</h3>
-  <p>Charley’s team prepped the yard and added exterior lighting. Our realtor was blown away. We sold the home within 4 days!</p>
-  <div class="review-footer">– Mike H., Queen Creek AZ</div>
-</div>
-
-  </div>  <footer>
-    <p>&copy; 2024 NeuraMatrix.ai • Trusted by Your Arizona Neighbors</p>
+  </section>  <footer>
+    <p>&copy; 2024 NeuraMatrix.ai • Powered by CHARLEY'S LLC | Chandler, AZ</p>
   </footer>
 </body>
 </html>
