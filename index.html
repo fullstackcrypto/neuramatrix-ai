@@ -1,9 +1,142 @@
-<form action="https://formsubmit.co/support@charleysllc.com" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <input type="text" name="_gotcha" style="display:none">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="thank-you.html">
-  <button type="submit">Send Message</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Reviews | NeuraMatrix.ai</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background: #0a0a0a;
+      padding: 14px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #00ffff33;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #00ffff;
+      margin: 0;
+    }
+
+    nav a {
+      color: #00ffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00dddd;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 60px 20px 40px;
+      color: #00ffff;
+      text-align: center;
+      text-shadow: 0 0 12px #00ffff88;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .review-card {
+      background: #1b1b1b;
+      border: 1px solid #00ffff44;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.08);
+      text-align: left;
+    }
+
+    .review-card h3 {
+      margin: 0 0 10px;
+      color: #00ffff;
+    }
+
+    .review-card p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .review-footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0a0a0a;
+      border-top: 1px solid #00ffff22;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NeuraMatrix.ai</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="store.html">Store</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <h1>What Clients Are Saying</h1>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <h3>"So Fast and Professional!"</h3>
+      <p>Charley installed our smart door lock in under an hour. I feel so much safer now, and it looks amazing too. Highly recommend!</p>
+      <div class="review-footer">– Amanda R., Chandler AZ</div>
+    </div>
+
+    <div class="review-card">
+      <h3>"Made My Home Smarter Instantly"</h3>
+      <p>I was overwhelmed by options online, but Ready-Set guided me from purchase to install. Everything works flawlessly.</p>
+      <div class="review-footer">– Daniel T., Mesa AZ</div>
+    </div>
+
+    <div class="review-card">
+      <h3>"Great Work. Fair Price."</h3>
+      <p>We booked lighting, irrigation timers, and a camera system. They came out next day and handled it all. Super clean work.</p>
+      <div class="review-footer">– Jolene S., Gilbert AZ</div>
+    </div>
+
+    <div class="review-card">
+      <h3>"Looks Like a New Property"</h3>
+      <p>Charley’s team prepped the yard and added exterior lighting. Our realtor was blown away. We sold the home within 4 days!</p>
+      <div class="review-footer">– Mike H., Queen Creek AZ</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 NeuraMatrix.ai • Trusted by Your Arizona Neighbors</p>
+  </footer>
+</body>
+</html>
