@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - NeuraMatrix.ai</title>
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Ready-Set Solutions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-        <p>Request a consultation or installation quote today!</p>
-    </header>
+  <header>
+    <h1>Contact Us</h1>
+    <p>Request a consultation or installation quote today!</p>
+  </header>
 
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+  <nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
+  <section class="contact-form">
     <form action="https://formsubmit.co/support@charleysllc.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
 
-        <!-- reCAPTCHA -->
-        <div class="g-recaptcha" data-sitekey="6Lc3tCMrAAAAANkQTwzjET8HrAfs7bjHT5r9wbjF"></div>
+      <!-- Honeypot Field (hidden to stop spam bots) -->
+      <input type="text" name="_honey" style="display:none">
 
-        <button type="submit" class="cta-btn">Send Message</button>
+      <!-- Disable built-in CAPTCHA -->
+      <input type="hidden" name="_captcha" value="false">
 
-        <!-- Redirect to thank you page after submission -->
-        <input type="hidden" name="_next" value="https://neuramatrix.ai/thankyou.html">
-        <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect to thank you page after submission -->
+      <input type="hidden" name="_next" value="https://charleysllc.com/thankyou">
+
+      <button type="submit">Send Message</button>
     </form>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 NeuraMatrix.ai – Smart & Secure Home Solutions</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Ready-Set Solutions – Smart & Secure Home Solutions</p>
+  </footer>
 </body>
 </html>
