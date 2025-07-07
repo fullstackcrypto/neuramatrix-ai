@@ -19,6 +19,11 @@ body {
     color: #ff6b6b !important;
 }
 
+/* Hero Section */
+.hero h1, .hero p {
+    text-shadow: 0 0 10px #e94560, 0 0 20px #e94560;
+}
+
 /* Card Styles for Features */
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
@@ -50,6 +55,19 @@ body {
 .btn-outline-primary:hover {
     background-color: #e94560;
     color: #fff;
+}
+
+/* Form Inputs */
+.form-control {
+    background-color: #2a2a4e;
+    border-color: #e94560;
+    color: #e0e0e0;
+}
+
+.form-control:focus {
+    background-color: #2a2a4e;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 5px #e94560;
 }
 
 /* Section Headers */
