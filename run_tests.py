@@ -6,7 +6,20 @@ Tests: HTML validity, CSS references, nav links, external CDN, form endpoints, a
 import os, sys, re, json, time, http.server, threading, urllib.request, urllib.error, socketserver
 from pathlib import Path
 
-SITE_DIR = Path("/home/runner/work/neuramatrix-ai/neuramatrix-ai")
+
+def _resolve_site_dir() -> Path:
+    """Resolve the site root: env var SITE_DIR → nearest .git ancestor → script directory."""
+    env = os.environ.get("SITE_DIR")
+    if env:
+        return Path(env).resolve()
+    candidate = Path(__file__).resolve().parent
+    for p in [candidate, *candidate.parents]:
+        if (p / ".git").exists():
+            return p
+    return candidate
+
+
+SITE_DIR = _resolve_site_dir()
 PORT = 8765
 RESULTS = []
 
@@ -145,8 +158,9 @@ def check_deployment_config():
     if static.exists():
         data = json.loads(static.read_text())
         if data.get("clean_urls"):
-            log("WARN", "static.json clean_urls=true", 
-                "Routes all to index.html — fine for CDN/SPA but may mask 404s on multi-page site")
+            log("WARN", "static.json clean_urls=true",
+                "Non-existent pages will be silently routed to index.html, "
+                "preventing proper 404 detection on this multi-page static site")
         else:
             log("PASS", "static.json present")
 
